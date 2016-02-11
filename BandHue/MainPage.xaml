@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BandHue.MainPage" Title="Band Hue">
+    <Grid Padding="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label x:Name="BPMLabel" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"  FontSize="120" Text="{Binding BeatsPerMinute}"/>
+        <Image x:Name="HeartImage" VerticalOptions="EndAndExpand" Source="Heart.png" Grid.Row="0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="AnimateHeart_Clicked" />
+            </Image.GestureRecognizers>
+        </Image>
+        <StackLayout>
+        <Label x:Name="StatusLabel" Grid.Row="2" VerticalOptions="End" TextColor="Gray" Text="{Binding BeatQuality}" HorizontalOptions="Center" />
+        <Slider x:Name="TestValue" Minimum="0" Maximum="300" Value="60" ></Slider>
+                </StackLayout>
+                <StackLayout VerticalOptions="Center">
+            <Button Text="Connect" Command="{Binding ConnectCommand}" />
+            <Label Text="{Binding LastMessage}" />
+            <Button Text="Connect To HR" Command="{Binding ConnectHRCommand}" IsVisible="{Binding IsConnected}" />
+            <Label Text="{Binding HrValue}" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
