@@ -12,7 +12,7 @@
                 <TapGestureRecognizer Tapped="AnimateHeart_Clicked" />
             </Image.GestureRecognizers>
         </Image>
-        <StackLayout>
+        <StackLayout Grid.Row="2">
         <Label x:Name="StatusLabel" Grid.Row="2" VerticalOptions="End" TextColor="Gray" Text="{Binding BeatQuality}" HorizontalOptions="Center" />
         <Slider x:Name="TestValue" Minimum="0" Maximum="300" Value="60" ></Slider>
                 </StackLayout>
